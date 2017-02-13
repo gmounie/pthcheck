@@ -38,6 +38,9 @@ It matches:
 TODO
 - create do not get a thread_t
 - return before unlock
+- cancel after join
+- cancel après create
+
 
 # Rational
 

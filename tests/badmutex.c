@@ -24,5 +24,10 @@ void badMutexInWait(int a) {
     return;
 }
 
+void badMutexPairing(int a) {
+    pthread_mutex_lock(& m);
+    pthread_mutex_unlock(& m2);
+}
+
 
 

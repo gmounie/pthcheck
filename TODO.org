@@ -1,2 +1,4 @@
 * Tests à ajouter
   - si create et join sont à la suite dans une boucle même
+  - join suivi d'un cancel
+

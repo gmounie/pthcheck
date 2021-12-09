@@ -6,9 +6,11 @@
 @nounlock@
 pthread_mutex_t M;
 @@
+(
 * pthread_mutex_lock(& M)
 |
 * pthread_mutex_trylock(& M)
+)
 ... when != pthread_mutex_unlock(& M)
 
 // unlock should follow a lock on the same mutex in the function
@@ -16,8 +18,7 @@ pthread_mutex_t M;
 pthread_mutex_t M;
 @@
 ... when != pthread_mutex_lock(& M)
-|
-... when != pthread_mutex_trylock(& M)
+    when != pthread_mutex_trylock(& M)
 * pthread_mutex_unlock(& M)
 
 // The cond_wait should be done in a while loop
@@ -29,7 +30,7 @@ expression E;
 pthread_mutex_lock(& M)
 ...
 (
-* if (E) pthread_cond_wait(& C, & M)
+* if (E) pthread_cond_wait(& C, & M);
 |
 * if (E) { ... pthread_cond_wait(& C, & M); ... }
 )
@@ -103,7 +104,7 @@ expression E;
 position p1;
 @@
 (
- while(E) pthread_cond_wait@p1(&C, &M)
+ while(E) pthread_cond_wait@p1(&C, &M);
 |
  while(E) { ... pthread_cond_wait@p1(&C, &M); ... }
 )

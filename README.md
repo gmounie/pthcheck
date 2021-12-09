@@ -54,7 +54,7 @@ diff =
 ## spatch output with debug
 Spatch matches two rules
 1. the unlock is missing in the function 
-2. the function use two times the same lock 
+2. the function uses two times the same lock 
 
 ```
 ...
